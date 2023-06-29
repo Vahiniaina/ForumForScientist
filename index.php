@@ -13,6 +13,7 @@
 </head>
 <body>
     <!--Footer-->
+    <h1>Hello World</h1>
     <?php include(dirname(__FILE__).'/Vues/footer.php'); ?>
 </body>
 </html>
