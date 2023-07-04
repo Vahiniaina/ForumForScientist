@@ -17,9 +17,9 @@
                  <a class="btn btn-outline-primary" href="/Forum/Vues/signin.php">Sign in</a>
             </div>
             <div class="col-lg-3 col-md-6 col-12 text-center">  
-                 <h4>Follow us on</h4>  
+                 <h4>Contact us</h4>  
                  <div><i class="fa fa-phone" class="p-2">+261388623981</i></div>
-                <ul class="followus" class="list"> <h4>Suivez nous:</h4>
+                <ul class="followus" class="list"> <h4>Follow us on</h4>
                     <li>
                          <a href="https://mobile.facebook.com/?_rdc=1&_rdr" title="RANDRIANJATOVO Vahiniaina" target="_blank">
                                 <img src="../assets/images/facebook.png" width="30" height="30" alt="Icone facebook">

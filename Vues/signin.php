@@ -22,36 +22,21 @@
             <div class="container h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
                     <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-                                <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+                                <h2 class="text-uppercase text-center mb-5">SIGN IN</h2>
 
-                                <form method="POST" action="../Controllers/signingUp.php">
-
-                                    <div class="form-outline mb-4">
-                                        <label class="form-label" for="name">Your Name</label>
-                                        <input type="text" id="name" class="form-control form-control-lg" name="name" />
-                                    </div>
+                                <form>
 
                                     <div class="form-outline mb-4">
-                                        <label class="form-label" for="mail">Your Email</label>
-                                        <input type="mail" id="mail" class="form-control form-control-lg" name="mail" />
+                                        <label class="mail" for="mail">mail</label>
+                                        <input type="text" id="mail" class="form-control form-control-lg" />
                                     </div>
 
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="password">Password</label>
-                                        <input type="password" id="password" class="form-control form-control-lg" name="password"/>
+                                        <input type="password" id="password" class="form-control form-control-lg" />
                                     </div>
 
-                                    <div class="form-outline mb-4">
-                                        <label class="form-label" for="password2">Repeat your password</label>
-                                        <input type="password" id="password2" class="form-control form-control-lg" name="password2" />
-                                    </div>
-
-                                    <div class="form-check d-flex justify-content-center mb-5">
-                                        <label class="form-check-label" for="agreement">
-                                        <input class="form-check-input me-2" type="checkbox" value="" id="agreement" required/>
-                                            I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
-                                        </label>
-                                    </div>
+                                    
 
                                     <div class="d-flex justify-content-center">
                                         <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Sign up</button>
