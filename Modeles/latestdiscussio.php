@@ -9,15 +9,17 @@
         } 
         return $db;
     }
-    function get_user($db,$mail)
+    function get_latest_discussion($db)
     {
-        $result=array();
-        $qw="select * from user where mail='$mail';";
+        $qw="select * from discussion order by post_date desc limit 0,10 ;";
         $exe=mysqli_query($db,$qw);
-        $result=mysqli_fetch_assoc($exe);
-        if($result)
+        if($exe)
         {    
-             return $result;
+            while($results=mysqli_fetch_assoc($exe))
+            {
+                $result[]=$results;
+            }
+            return $result;
         }
-        else header("Location: /../Vues/signin.php?ErrorGetUser");
+        else header("Location: /../Vues/home.php?ErrorGetDscussionr");
     }

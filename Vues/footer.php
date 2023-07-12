@@ -13,8 +13,18 @@
             </div>
             <div class="col-lg-3 col-md-6 col-12 text-center">
                  <h4>Community</h4>
-                 <a class="btn btn-outline-primary" href="/Forum/Vues/signup.php">Sign up</a><br>
-                 <a class="btn btn-outline-primary" href="/Forum/Vues/signin.php">Sign in</a>
+                 <?php 
+                    if(isset($_SESSION['state']) AND $_SESSION['state']=="connected" )
+                    {
+                        echo "<a class=\"btn btn-outline-primary\" href=\"/../forum/profile.php?mail=".$_SESSION['mail']."\">Profile</a><br>";
+                        echo "<a class=\"btn btn-outline-primary\" href=\"/../forum/Controllers/logout.php\">Log Out</a>";
+                    }
+                    else
+                    {
+                        echo "<a class=\"btn btn-outline-primary\" href=\"/../forum/Controllers/signin.php\">Log In</a><br>";
+                        echo "<a class=\"btn btn-outline-primary\" href=\"/../forum/Controllers/signup.php\">Sign UP</a>";
+                    }
+                ?>
             </div>
             <div class="col-lg-3 col-md-6 col-12 text-center">  
                  <h4>Contact us</h4>  

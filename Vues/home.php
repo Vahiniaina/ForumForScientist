@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <!--head-->
@@ -15,8 +18,17 @@
 <body>
     <!--Header-->
     <?php include(dirname(__FILE__).'/header.php'); ?>
+    <!-- Content -->
+    <section>
+        <div class="container-fluid">
+            <h1>Hello World </h1>
+            <a href="../Controllers/startAdiscussion.php">Start a discussion</a>
+            <?php 
+                // include(dirname(__FILE__).'/../Controllers/latestdiscussio.php');
+            ?>
+        </div>
+    </section>
     <!--Footer-->
-    <h1>Hello World</h1>
     <?php include(dirname(__FILE__).'/footer.php'); ?>
 </body>
 </html>

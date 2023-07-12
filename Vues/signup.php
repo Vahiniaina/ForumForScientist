@@ -1,7 +1,9 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
-
 <head>
-    <title>Inscription</title>
+    <title>Sign up</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="../assets/css/style.css">
@@ -24,7 +26,7 @@
                     <div class="col-12 col-md-9 col-lg-7 col-xl-6">
                                 <h2 class="text-uppercase text-center mb-5">Create an account</h2>
 
-                                <form method="POST" action="../Controllers/signingUp.php">
+                                <form method="POST" action="/../Forum/Controllers/signup.php">
 
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="name">Your Name</label>
