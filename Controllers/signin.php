@@ -15,7 +15,11 @@
             $_SESSION['state']="connected";
             $_SESSION['mail']=$mail;
             $hash=$result['password'];
-            if(password_verify($password, $hash)) header("Location: /../Forum/Vues/home.php?mail=".$mail);
+            if(password_verify($password, $hash))
+            {
+                $_SESSION['user_id']=$result['user_id'];
+                header("Location: /../Forum/Vues/home.php?mail=".$mail);
+            } 
             else header("Location: /../Forum/Vues/signin.php?ErrorWrongPassWord".$result['password']);
         }
         else 

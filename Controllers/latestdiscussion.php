@@ -1,6 +1,5 @@
 <?php
-    session_start();
-    include(dirname(__FILE__).'/../Modeles/latestdiscussio.php');
+    include(dirname(__FILE__).'/../Modeles/latestdiscussion.php');
     $db=connectDb();
     // $qw="select * from user where mail='$mail';";
     // $exe=mysqli_query($db,$qw);
@@ -9,5 +8,5 @@
     $result=get_latest_discussion($db);
     if (!$result) 
     {
-        header("Location: /../Forum/Vues/signin.php?ErreurGetLatestDiscuu");
+        header("Location: /../Vues/signin.php?ErreurGetLatestDiscuu");
     }

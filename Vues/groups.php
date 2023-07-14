@@ -1,14 +1,12 @@
 <?php
-session_start();
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<!--head-->
-
 <head>
-    <title>Acceuille</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groups</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../fontawesome/css/all.css">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
@@ -16,35 +14,34 @@ session_start();
     <script src="../bootstrap/js/jquery-3.5.1.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
 </head>
-
 <body>
     <!--Header-->
     <?php include(dirname(__FILE__) . '/header.php'); ?>
     <!-- Content -->
     <section>
         <div class="container">
-            <a href="../Controllers/startAdiscussion.php">Start a discussion</a><br>
+            <a href="../Vues/createGroup.php?user_id=<?php echo $_SESSION['user_id'];?>">Create a group</a><br>
             <div class="table-responsive">
-                <h3>Latest discussions</h3>
+                <h3>Groups</h3>
                 <table class="table table-striped table-sm">
                     <thead>
                         <tr>
                             <th>#</th>
+                            <th>Name</th>
+                            <th>Admin</th>
+                            <th>Description</th>
+                            <th>Accesibility</th>
                             <th>Topic</th>
-                            <th>Author</th>
-                            <th>Posting date</th>
-                            <th>Content</th>
-                            <th>Replies</th>
-                            <th>Views /Votes</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        include(dirname(__FILE__) . '/../Controllers/latestdiscussion.php');
+                        include(dirname(__FILE__) . '/../Controllers/groupList.php');
                         foreach ($result as $res) 
                         {
                             echo "<tr>";
-                            echo "<td></td><td>".$res['topic'] . "</td><td>" . $res['starter_id'] . " </td><td> <em>" . $res['post_date'] . "</em></td><td>" . $res['content'] . "</td><td><a href=\"../Vues/discussion.php?discussion_id=".$res['discussion_id']."\">n replies</a></td><td><a href=\"../Controllers/viewAndVote.php?discussion_id=".$res['discussion_id']."\">m votes o views</a></td>";
+                            echo "<td></td><td>".$res['group_name'] . "</td><td>" . $res['creater_id'] . " </td><td>" . $res['descriptiones'] . "</td><td>".$res['accesibilty']."</td><td>".$res['topic']."</td><td><a href=\"../Controllers/group.php?group_id=".$res['group_id']."\">Visit</a></td>";
                             echo "</tr>";
                         }
 
@@ -56,5 +53,4 @@ session_start();
     <!--Footer-->
     <?php include(dirname(__FILE__) . '/footer.php'); ?>
 </body>
-
 </html>
