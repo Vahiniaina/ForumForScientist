@@ -19,7 +19,7 @@
     <!--Header-->
     <?php include(dirname(__FILE__).'/header.php'); ?>
     <!--Contenu-->
-    <section class="vh-100 bg-image " style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+    <section class="vh-100 " >
         <div class="mask d-flex align-items-center h-100 gradient-custom-3">
             <div class="container h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">

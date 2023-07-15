@@ -23,6 +23,24 @@
             <a href="../Vues/changeProfile.php?user_id=<?php echo $_SESSION['user_id'];?>">Change profile</a><br>
             <?php include(dirname(__FILE__) . '/../Controllers/getProfile.php'); ?>
             <div class="table-responsive">
+                <table class="table table-striped table-md">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Mail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                            echo "<tr>";
+                            echo "<td>".$result['user_id'] . "</td><td>" . $result['name'] . "</td><td>".$result['mail']."</td></td>";
+                            echo "</tr>";
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-responsive">
                 <h3>My group</h3>
                 <table class="table table-striped table-sm">
                     <thead>
@@ -41,7 +59,7 @@
                         foreach ($result as $res) 
                         {
                             echo "<tr>";
-                            echo "<td></td><td>".$res['group_name'] . "</td><td>" . $res['descriptiones'] . "</td><td>".$res['accesibilty']."</td><td>".$res['topic']."</td><td><a href=\"../Controllers/group.php?group_id=".$res['group_id']."\">Visit</a></td>";
+                            echo "<td></td><td>".$res['group_name'] . "</td><td>" . $res['descriptiones'] . "</td><td>".$res['accesibilty']."</td><td>".$res['topic']."</td><td><a href=\"../Controllers/admin.php?group_id=".$res['group_id']."\">Admin</a></td>";
                             echo "</tr>";
                         }
 
