@@ -8,12 +8,12 @@
         }
         return $db;
     }
-    function get_Profile($db,$mail)
+    function get_Group($db,$group_id)
     {
 
         $data = array();
-        $response = $db->prepare("SELECT *  FROM user WHERE mail =:id  ");
-        $response->execute(array('id' => $mail));
+        $response = $db->prepare("SELECT *  FROM groupe WHERE group_id =:id  ");
+        $response->execute(array('id' => $group_id));
         $data = $response->fetch();
         return $data;
     }

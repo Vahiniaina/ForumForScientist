@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>Group Administration</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../fontawesome/css/all.css">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
@@ -20,51 +20,52 @@
     <!-- Content -->
     <section>
         <div class="container">
-            <a href="../Vues/changeProfile.php?user_id=<?php echo $_SESSION['user_id'];?>">Change profile</a><br>
-            <a  class="text-danger" href="../Vues/deleteProfile.php?user_id=<?php echo $_SESSION['user_id'];?>">Delete profile</a><br>
-            <?php include(dirname(__FILE__) . '/../Controllers/getProfile.php'); ?>
+            <a href="../Vues/changeGroup.php?user_id=<?php echo $_SESSION['user_id'];?>">Change group</a><br>
+            <a  class="text-danger" href="../Vues/deleteGroup.php?user_id=<?php echo $_SESSION['user_id'];?>">Delete group</a><br>
             <div class="table-responsive">
-                <table class="table table-striped table-md">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Name</th>
-                            <th>Mail</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                            echo "<tr>";
-                            echo "<td>".$result['user_id'] . "</td><td>" . $result['nam'] . "</td><td>".$result['mail']."</td></td>";
-                            echo "</tr>";
-                        ?>
-                    </tbody>
-                </table>
-            </div>
-            <div class="table-responsive">
-                <h3>My group</h3>
+                <h3>Group info</h3>
                 <table class="table table-striped table-sm">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>ID</th>
                             <th>Name</th>
                             <th>Description</th>
                             <th>Accesibility</th>
                             <th>Topic</th>
-                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        include(dirname(__FILE__) . '/../Controllers/MygroupList.php');
+                        include(dirname(__FILE__) . '/../Controllers/getGroup.php');
+                        echo "<tr>";
+                        echo "<td>".$result['group_id'] . "</td><td>".$result['group_name'] . "</td><td>" . $result['descriptiones'] . "</td><td>".$result['accesibilty']."</td><td>".$result['topic']."</td>";
+                        echo "</tr>";
+
+                        ?>
+                </table>
+            </div>
+            <div class="table-responsive">
+                <h3>Member List</h3>
+                <table class="table table-striped table-sm" >
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>Name</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        include(dirname(__FILE__) . '/../Controllers/memberListAdmin.php');
                         foreach ($result as $res) 
                         {
                             echo "<tr>";
-                            echo "<td></td><td>".$res['group_name'] . "</td><td>" . $res['descriptiones'] . "</td><td>".$res['accesibilty']."</td><td>".$res['topic']."</td><td><a href=\"../Vues/admin.php?group_id=".$res['group_id']."\">Admin</a></td>";
+                            echo "<td>".$res['iden']."</td><td>".$res['nam']."</td><td><a class=\"btn btn-danger btn-sm\" href=\"removeFromGroup.php?group_id=".$_GET['group_id']."+member_id=".$res['iden']."\">Remove</a></td>";
                             echo "</tr>";
                         }
 
                         ?>
+                    </tbody>
                 </table>
             </div>
         </div>

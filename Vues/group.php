@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Groups</title>
+    <title>Group</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../fontawesome/css/all.css">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
@@ -20,32 +20,28 @@
     <!-- Content -->
     <section>
         <div class="container">
-            <a href="../Vues/createGroup.php?user_id=<?php echo $_SESSION['user_id'];?>">Create a group</a><br>
+            <a href="../Vues/joinGroup.php?user_id=<?php echo $_SESSION['user_id'];?>+group_id=<?php echo $_GET['group_id'];?>">Join group</a><br>
             <div class="table-responsive">
-                <h3>Groups</h3>
-                <table class="table table-striped table-sm">
+                <h3>Member List</h3>
+                <table class="table table-striped table-sm" >
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>User ID</th>
                             <th>Name</th>
-                            <th>Admin</th>
-                            <th>Description</th>
-                            <th>Accesibility</th>
-                            <th>Topic</th>
-                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        include(dirname(__FILE__) . '/../Controllers/groupList.php');
+                        include(dirname(__FILE__) . '/../Controllers/memberList.php');
                         foreach ($result as $res) 
                         {
                             echo "<tr>";
-                            echo "<td></td><td>".$res['group_name'] . "</td><td>" . $res['creater_id'] . " </td><td>" . $res['descriptiones'] . "</td><td>".$res['accesibilty']."</td><td>".$res['topic']."</td><td><a href=\"../Vues/group.php?group_id=".$res['group_id']."\">Visit</a></td>";
+                            echo "<td>".$res['iden']."</td><td>".$res['nam']."</td>";
                             echo "</tr>";
                         }
 
                         ?>
+                    </tbody>
                 </table>
             </div>
         </div>

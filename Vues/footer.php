@@ -16,7 +16,7 @@
                  <?php 
                     if(isset($_SESSION['state']) AND $_SESSION['state']=="connected" )
                     {
-                        echo "<a class=\"btn btn-outline-primary\" href=\"/../forum/profile.php?mail=".$_SESSION['mail']."\">Profile</a><br>";
+                        echo "<a class=\"btn btn-outline-primary\" href=\"/../forum/Vues/profile.php?mail=".$_SESSION['mail']."\">Profile</a><br>";
                         echo "<a class=\"btn btn-outline-primary\" href=\"/../forum/Controllers/logout.php\">Log Out</a>";
                     }
                     else

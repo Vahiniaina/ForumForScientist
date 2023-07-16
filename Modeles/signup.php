@@ -7,7 +7,7 @@
 
     function create_user($db,$name, $mail, $password)
     {   
-        $qw="insert into user ( name, mail, password ) VALUES ( '$name', '$mail', '$password') ;";
+        $qw="insert into user ( nam, mail, passwor ) VALUES ( '$name', '$mail', '$password') ;";
         if (  $db->query($qw) === false) header("Location: /../Vues/signup?ErrorCreateUser");
     }
 

@@ -14,7 +14,7 @@
         if ($result) {
             $_SESSION['state']="connected";
             $_SESSION['mail']=$mail;
-            $hash=$result['password'];
+            $hash=$result['passwor'];
             if(password_verify($password, $hash))
             {
                 $_SESSION['user_id']=$result['user_id'];

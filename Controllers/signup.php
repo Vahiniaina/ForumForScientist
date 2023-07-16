@@ -12,6 +12,7 @@
             {
                 create_user($db,$name,$mail,$password);
                 $user=get_user($db,$mail);
+                $_SESSION['user_id']=$user['user_id'];
                 $_SESSION['mail']=$mail;
                 $_SESSION['state']="connected";
                 header("Location: /../Forum../Vues/home.php?SignUpSucces");
