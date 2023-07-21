@@ -20,9 +20,9 @@
     <!-- Content -->
     <section>
         <div class="container">
-            <a href="../Vues/changeProfile.php?user_id=<?php echo $_SESSION['user_id'];?>">Change profile</a><br>
-            <a  class="text-danger" href="../Vues/deleteProfile.php?user_id=<?php echo $_SESSION['user_id'];?>">Delete profile</a><br>
             <?php include(dirname(__FILE__) . '/../Controllers/getProfile.php'); ?>
+            <a href="../Vues/changeProfile.php?user_id=<?php echo $result['user_id'];?>">Change profile</a><br>
+            <a  class="text-danger" href="../Vues/deleteProfile.php?user_id=<?php echo $result['user_id'];?>">Delete profile</a><br>
             <div class="table-responsive">
                 <table class="table table-striped table-md">
                     <thead>

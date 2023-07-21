@@ -1,4 +1,14 @@
 <?php
+    function connectBDD()
+    {
+        try {
+            $db = new PDO('mysql:host=localhost;dbname=forum', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        return $db;
+    }
+
     function connectDb()
     {
         try {
@@ -8,6 +18,7 @@
         }
         return $db;
     }
+    
     function get_user_info($db,$user_id)
     {
         $result=array();

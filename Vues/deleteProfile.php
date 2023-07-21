@@ -26,7 +26,7 @@
                     <div class="col-12 col-md-9 col-lg-7 col-xl-6">
                                 <h2 class="text-uppercase text-center mb-5">Delete profile</h2>
 
-                                <form method="POST" action="/../Forum/Controllers/updateProfile.php">
+                                <form method="POST" action="/../Forum/Controllers/deleteProfile.php">
                                     <h6 class="text-warning">Are you sure?</h6>
 
                                     <div class="form-outline mb-4">
