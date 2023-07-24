@@ -12,7 +12,7 @@
     {
 
         $result = array();
-        $response = $db->query("SELECT *  FROM groupe ORDER BY creation_date DESC LIMIT 0,10  ");
+        $response = $db->query("SELECT *  FROM groupe INNER JOIN user ON groupe.creater_id=user.user_id ORDER BY groupe.creation_date DESC LIMIT 0,10  ");
         while ($data = $response->fetch()) {
             $result[] = $data;
         }

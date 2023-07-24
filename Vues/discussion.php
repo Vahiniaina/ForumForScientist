@@ -16,18 +16,46 @@
 </head>
 <body>
     <!--Header-->
-    <?php include(dirname(__FILE__) . '/header.php'); ?>
+    <?php
+        include(dirname(__FILE__) . '/header.php');
+        include(dirname(__FILE__) . '/../Controllers/LikesAndViews.php');
+     ?>
     <div class="container">
-            <a href="../Vues/reply.php?discussion_id=<?php echo $_GET['discussion_id']; ?>">Reply</a><br>
+        <!-- Buttons and likes/Views -->
+        <a href="../Vues/reply.php?discussion_id=<?php echo $_GET['discussion_id']; ?>">Reply</a><br>
+        <a href="../Controllers/like.php?discussion_id=<?php echo $_GET['discussion_id']; ?>&user_id=<?php if(isset($_SESSION['user_id'])) echo $_SESSION['user_id']; ?>">Like</a>
+        <br> <em> <?php echo $likes; ?> likes and <?php echo $views;?> views.</em>
+        <!-- Discussion Info -->
         <div class="table-responsive">
-                    <h3>Discussions</h3>
+                    <h3>Discussion Info</h3>
                     <table class="table table-striped table-sm">
                         <thead>
                             <tr>
                                 <th>#</th>
                                 <th>Author</th>
                                 <th>Date</th>
-                                <th>Sontent</th>
+                                <th>Content</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            include(dirname(__FILE__) . '/../Controllers/getDiscussion.php');
+                            echo "<tr>";
+                            echo "<td></td><td>".$result0['nam'] . "</td><td>" . $result0['post_date'] . " </td><td> <em>" . $result0['content'] . "</em></td>";
+                            echo "</tr>";
+                            ?>
+                    </table>
+        </div>
+        <!-- Replies -->
+        <div class="table-responsive">
+                    <h3>Replies</h3>
+                    <table class="table table-striped table-sm">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Author</th>
+                                <th>Date</th>
+                                <th>Content</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -36,7 +64,7 @@
                             foreach ($result as $res) 
                             {
                                 echo "<tr>";
-                                echo "<td></td><td>".$res['replier_id'] . "</td><td>" . $res['replies_date'] . " </td><td> <em>" . $res['content'] . "</em></td><td>" . $res['content']."</td>";
+                                echo "<td></td><td>".$res['nam'] . "</td><td>" . $res['replies_date'] . " </td><td> <em>" . $res['content'] . "</em></td>";
                                 echo "</tr>";
                             }
 

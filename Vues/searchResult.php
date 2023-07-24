@@ -6,7 +6,7 @@ session_start();
 <!--head-->
 
 <head>
-    <title>Acceuille</title>
+    <title>Result</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="../assets/css/style.css">
@@ -22,15 +22,17 @@ session_start();
     <?php include(dirname(__FILE__) . '/header.php'); ?>
     <!-- Content -->
     <section>
+        <!-- if Group or reply or discussion and getSearchResult -->
+        <?php 
+            include(dirname(__FILE__) . '/../Controllers/searchResult.php');
+        ?>
+        <!-- Showing results -->
         <div class="container">
-            <a href="../Controllers/startAdiscussion.php">Start a discussion</a><br>
             <div class="table-responsive">
-                <h3>Latest discussions</h3>
+                <h3>Search results</h3>
                 <table class="table table-striped table-sm">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Topic</th>
                             <th>Author</th>
                             <th>Posting date</th>
                             <th>Content</th>
@@ -39,11 +41,10 @@ session_start();
                     </thead>
                     <tbody>
                         <?php
-                        include(dirname(__FILE__) . '/../Controllers/latestdiscussion.php');
                         foreach ($result as $res) 
                         {
                             echo "<tr>";
-                            echo "<td></td><td>".$res['topic'] . "</td><td>" . $res['nam'] . " </td><td> <em>" . $res['post_date'] . "</em></td><td>" . $res['content'] . "</td><td><a href=\"../Vues/discussion.php?discussion_id=".$res['discussion_id']."\">Enter</a></td>";
+                            echo "<td>" . $res['auth'] . " </td><td> <em>" . $res['dat'] . "</em></td><td>" . $res['content'] . "</td><td><a href=\"../Vues/discussion.php?discussion_id=".$res['id']."\">Enter</a></td>";
                             echo "</tr>";
                         }
 

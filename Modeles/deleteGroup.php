@@ -1,4 +1,5 @@
 <?php
+    
     function connectBDD()
     {
         $db = mysqli_connect("localhost","root", "", "forum");
@@ -9,4 +10,3 @@
         } 
         return $db;
     }
-    

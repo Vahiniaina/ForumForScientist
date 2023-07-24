@@ -11,7 +11,7 @@
     }
     function get_latest_discussion($db)
     {
-        $qw="select * from discussion order by post_date desc limit 0,10 ;";
+        $qw="select *, user.nam as nam from discussion inner join user on discussion.starter_id=user_id order by post_date desc limit 0,10 ;";
         $exe=mysqli_query($db,$qw);
         if($exe)
         {    

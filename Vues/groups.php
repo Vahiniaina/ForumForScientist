@@ -41,7 +41,7 @@
                         foreach ($result as $res) 
                         {
                             echo "<tr>";
-                            echo "<td></td><td>".$res['group_name'] . "</td><td>" . $res['creater_id'] . " </td><td>" . $res['descriptiones'] . "</td><td>".$res['accesibilty']."</td><td>".$res['topic']."</td><td><a href=\"../Vues/group.php?group_id=".$res['group_id']."\">Visit</a></td>";
+                            echo "<td></td><td>".$res['group_name'] . "</td><td>" . $res['nam'] . " </td><td>" . $res['descriptiones'] . "</td><td>".$res['accesibilty']."</td><td>".$res['topic']."</td><td><a href=\"../Vues/group.php?group_id=".$res['group_id']."\">Visit</a></td>";
                             echo "</tr>";
                         }
 

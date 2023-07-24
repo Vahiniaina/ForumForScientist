@@ -1,13 +1,11 @@
-<?php
+<?php 
     session_start();
-    if(!isset($_SESSION['user_id'])) header("Location: /../forum/Vues/signin.php?SignInToCreateAGroup");
 ?>
 <!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Group</title>
+    <title>Change Group</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../fontawesome/css/all.css">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
@@ -15,31 +13,33 @@
     <script src="../bootstrap/js/jquery-3.5.1.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
 </head>
+<html>
+
 <body>
-    
     <!--Header-->
     <?php include(dirname(__FILE__).'/header.php'); ?>
     <!--Contenu-->
-    <section class="vh-100 ">
+    <section class="vh-100 " >
         <div class="mask d-flex align-items-center h-100 gradient-custom-3">
             <div class="container h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
                     <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-                                <h2 class="text-uppercase text-center mb-5">CREATE A GROUP</h2>
+                                <h2 class="text-uppercase text-center mb-5">Modify profile</h2>
 
-                                <form method="POST" action="/../Forum/Controllers/createGroup.php" >
+                                <form method="POST" action="/../Forum/Controllers/updateGroup.php">
 
                                     <div class="form-outline mb-4">
-                                        <label class="group_name" for="group_name">Group_name</label>
-                                        <input type="text" id="group_name" class="form-control form-control-lg"  name="group_name" required/>
+                                        <label class="form-label" for="name">New Name</label>
+                                        <input type="text" id="name" class="form-control form-control-lg" name="name" />
                                     </div>
-                                    <div class="form-outline mb-4">
-                                        <label class="topic" for="topic">Topic</label>
-                                        <input type="text" id="topic" class="form-control form-control-lg"  name="topic" required/>
+
+                                    <div class="form-outline mb-4">New Description</label>
+                                        <input type="text" id="description" class="form-control form-control-lg" name="description" />
                                     </div>
+
                                     <div class="form-outline mb-4">
-                                        <label class="description" for="description">Description</label>
-                                        <textarea type="text" id="description" class="form-control form-control-lg"  name="description"></textarea>
+                                        <label class="form-label" for="npassword">New Topic</label>
+                                        <input type="text" id="topic" class="form-control form-control-lg" name="topic"/>
                                     </div>
                                     <div class="form-outline mb-4">
                                         <label class="visibility" for="visibility">Visibility</label>
@@ -55,14 +55,16 @@
                                             <option value="private">private</option>
                                         </select>
                                     </div>
-                                    
-                                    <input type="hidden" id="user_id" class="form-control form-control-lg" name="user_id"  value="<?php echo $_SESSION['user_id'];?>" />
-                                    
-
-                                    
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="password">Your password</label>
+                                        <input type="password" id="password" class="form-control form-control-lg" name="password" required />
+                                    </div>
+                                    <input type="hidden" name="user_id" value="<?php echo $_GET['user_id'] ; ?>">
+                                    <input type="hidden" name="group_id" value="<?php echo $_GET['group_id'] ; ?>">
+                        
 
                                     <div class="d-flex justify-content-center">
-                                        <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Create</button>
+                                        <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Submit</button>
                                     </div>
                                 </form>
                     </div>
@@ -72,6 +74,9 @@
     </section>
     <br>
     <!--Footer-->
-    <?php include 'footer.php'; ?>
+    <section class="container">
+        <?php include 'footer.php'; ?>
+    </section>
 </body>
+
 </html>

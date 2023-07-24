@@ -10,9 +10,9 @@
         return $db;
     }
 
-    function create_replies($db ,$replier_id, $content, $discussion_id)
+    function create_request($db ,$user_id, $messages, $group_id)
     {   
-        $qw="insert into replies ( replier_id, content, discussion_id ) VALUES ( '$replier_id', '$content', '$discussion_id') ;";
-        if (  $db->query($qw) === false) header("Location: /../Vues/reply.php?ErrorCreateReply");
+        $qw="insert into memberrequest ( user_id, mes, group_id ) VALUES ( '$user_id', '$messages', '$group_id') ;";
+        if (  $db->query($qw) === false) return FALSE;
         return TRUE;
     }

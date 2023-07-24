@@ -1,5 +1,6 @@
 <?php
     session_start();
+    if(!isset($_SESSION['user_id'])) header("Location: /../forum/Vues/signin.php?SignInToReply");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +25,7 @@
             <div class="container h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
                     <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-                                <h2 class="text-uppercase text-center mb-5">SIGN IN</h2>
+                                <h2 class="text-uppercase text-center mb-5">Reply</h2>
 
                                 <form method="POST" action="/../Forum/Controllers/creatReplies.php" >
 

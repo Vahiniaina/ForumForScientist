@@ -12,11 +12,11 @@
         // $result=array();
         // $result=get_user($db,$mail);
         if ($result) {
-            $_SESSION['state']="connected";
-            $_SESSION['mail']=$mail;
             $hash=$result['passwor'];
             if(password_verify($password, $hash))
             {
+                $_SESSION['state']="connected";
+                $_SESSION['mail']=$mail;
                 $_SESSION['user_id']=$result['user_id'];
                 header("Location: /../Forum/Vues/home.php?mail=".$mail);
             } 

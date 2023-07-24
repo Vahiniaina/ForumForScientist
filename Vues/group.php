@@ -20,7 +20,7 @@
     <!-- Content -->
     <section>
         <div class="container">
-            <a href="../Vues/joinGroup.php?user_id=<?php echo $_SESSION['user_id'];?>+group_id=<?php echo $_GET['group_id'];?>">Join group</a><br>
+            <a href="../Vues/joinGroup.php?user_id=<?php echo $_SESSION['user_id'];?>&group_id=<?php echo $_GET['group_id'];?>">Join group</a><br>
             <div class="table-responsive">
                 <h3>Member List</h3>
                 <table class="table table-striped table-sm" >

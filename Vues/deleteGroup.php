@@ -3,7 +3,7 @@
 ?>
 <!DOCTYPE html>
 <head>
-    <title>Change profile</title>
+    <title>Delete Group</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="../assets/css/style.css">
@@ -24,33 +24,21 @@
             <div class="container h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
                     <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-                                <h2 class="text-uppercase text-center mb-5">Modify profile</h2>
+                                <h2 class="text-uppercase text-center mb-5">Delete Group</h2>
 
-                                <form method="POST" action="/../Forum/Controllers/updateProfile.php">
-
-                                    <div class="form-outline mb-4">
-                                        <label class="form-label" for="name">New Name</label>
-                                        <input type="text" id="name" class="form-control form-control-lg" name="name" />
-                                    </div>
-
-                                    <div class="form-outline mb-4">New Email</label>
-                                        <input type="mail" id="mail" class="form-control form-control-lg" name="mail" />
-                                    </div>
+                                <form method="POST" action="/../Forum/Controllers/deleteGroup.php">
+                                    <h6 class="text-warning">Are you sure?</h6>
 
                                     <div class="form-outline mb-4">
-                                        <label class="form-label" for="npassword">New password</label>
-                                        <input type="password" id="npassword" class="form-control form-control-lg" name="npassword"/>
-                                    </div>
-
-                                    <div class="form-outline mb-4">
-                                        <label class="form-label" for="password">Your password</label>
-                                        <input type="password" id="password" class="form-control form-control-lg" name="password" required />
+                                        <label class="form-label" for="password2">Your password</label>
+                                        <input type="password" id="password2" class="form-control form-control-lg" name="password" required />
                                     </div>
                                     <input type="hidden" name="user_id" value="<?php echo $_GET['user_id'] ; ?>">
+                                    <input type="hidden" name="group_id" value="<?php echo $_GET['group_id'] ; ?>">
                         
 
                                     <div class="d-flex justify-content-center">
-                                        <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Submit</button>
+                                        <button type="submit" class="btn btn-danger btn-block btn-lg gradient-custom-4 text-body">Delete</button>
                                     </div>
                                 </form>
                     </div>
