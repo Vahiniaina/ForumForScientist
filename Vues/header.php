@@ -1,7 +1,7 @@
 <!-- Menu -->
 <div class="container" class="flex">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a href="/../forum/Vues/home.php"><img src="/../forum/assets/images/facebook.png" width="50" height="50"></a>
+    <a href="/../forum/Vues/home.php"><img src="/../forum/assets/images/Forum_Picture.png" width="50" height="50"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
