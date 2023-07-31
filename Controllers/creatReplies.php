@@ -3,7 +3,7 @@
     if(isset($_POST['replier_id']) and isset($_POST['content']) and isset($_POST['discussion_id']))
         {
             $replier_id=$_POST['replier_id'];
-            $content=$_POST['content'];
+            $content=addslashes($_POST['content']);
             $discussion_id=$_POST['discussion_id'];
             include(dirname(__FILE__).'/../Modeles/creatReplies.php');
             if(isset($_SESSION['user_id'])) $replier_id=$_SESSION['user_id'];

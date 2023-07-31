@@ -15,9 +15,10 @@ session_start();
     <link href="../assets/css/navbar-top-fixed.css" rel="stylesheet">
     <script src="../bootstrap/js/jquery-3.5.1.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
-<body>
+<body style="padding-top: 0 !important;">
     <!--Header-->
     <?php include(dirname(__FILE__) . '/header.php'); ?>
     <!-- Content -->
@@ -33,8 +34,10 @@ session_start();
                 <table class="table table-striped table-sm">
                     <thead>
                         <tr>
-                            <th>Author</th>
-                            <th>Posting date</th>
+                            <th><?php echo $col1; ?></th>
+                            <th><?php echo $col; ?></th>
+                            <th><?php echo $col2; ?> date</th>
+                            <th>Topic</th>
                             <th>Content</th>
                             <th>Action</th>
                         </tr>
@@ -44,7 +47,7 @@ session_start();
                         foreach ($result as $res) 
                         {
                             echo "<tr>";
-                            echo "<td>" . $res['auth'] . " </td><td> <em>" . $res['dat'] . "</em></td><td>" . $res['content'] . "</td><td><a href=\"../Vues/discussion.php?discussion_id=".$res['id']."\">Enter</a></td>";
+                            echo "<td>".$res['ids']."</td><td>" . $res['auth'] . " </td><td> <em>" . $res['dat'] . "</em></td><td>" . $res['topic'] . "</td><td>" . $res['content'] . "</td><td><a href=\"../Vues/".$type.".php?".$type."_id=".$res['id']."\">Enter</a></td>";
                             echo "</tr>";
                         }
 

@@ -9,9 +9,9 @@
         return $db;
     }
 
-    function create_discussion($db ,$group_name, $topic, $description,$visiblility,$accesibilty,$user_id)
+    function create_discussion($db ,$group_name, $topic, $description,$accesibilty,$user_id)
     {   
         
-        if(!$db->exec("INSERT INTO groupe ( group_name, topic, descriptiones, visibility, accesibilty, creater_id ) VALUES ( '$group_name', '$topic', '$description','$visiblility', '$accesibilty','$user_id')   ")) return FALSE;
+        if(!$db->exec("INSERT INTO groupe ( group_name, topic, descriptiones,  accesibilty, creater_id ) VALUES ( '$group_name', '$topic', '$description', '$accesibilty','$user_id')   ")) return FALSE;
         return TRUE;
     }

@@ -12,7 +12,7 @@
     function getGroupResult($db,$keyword)
     {
         $result = array();
-        $response = $db->prepare("SELECT group_id AS id , creater_id AS auth , descriptiones AS content , creation_date AS dat FROM groupe WHERE topic LIKE '%$keyword%'  OR descriptiones LIKE '%$keyword%' ");
+        $response = $db->prepare("SELECT group_id AS id , group_name AS ids , topic , user.nam AS auth , descriptiones AS content , creation_date AS dat FROM groupe INNER JOIN user ON user.user_id=groupe.creater_id WHERE descriptiones LIKE '%$keyword%' OR topic LIKE '%$keyword%' OR user.nam LIKE '%$keyword%' ");
         $response->execute();
         while ($data = $response->fetch()) {
             $result[] = $data;
@@ -20,26 +20,13 @@
         return $result;
     }
     
-    // function getReplyResult($db,$keyword)
-    // {
-
-    //     $result = array();
-    //     $response = $db->prepare("SELECT user.nam AS auth  FROM groupe INNER JOIN user ON user.user_id=groupe.creater_id WHERE member.keyword =:id ");
-    //     $response->execute(array('id' => $keyword));
-    //     while ($data = $response->fetch()) {
-    //         $result[] = $data;
-    //     }
-    //     return $result;
-    // }
-    
-    // function getDiscussionResult($db,$keyword)
-    // {
-
-    //     $result = array();
-    //     $response = $db->prepare("SELECT member.user_id AS iden , user.nam as nam FROM member INNER JOIN user ON member.user_id=user.user_id WHERE member.keyword =:id ");
-    //     $response->execute(array('id' => $keyword));
-    //     while ($data = $response->fetch()) {
-    //         $result[] = $data;
-    //     }
-    //     return $result;
-    // }
+    function getDiscussionResult($db,$keyword)
+    {
+        $result = array();
+        $response = $db->prepare("SELECT discussion_id AS id ,discussion_id AS ids , topic AS topic , user.nam AS auth , content , post_date AS dat FROM discussion INNER JOIN user ON user.user_id=discussion.starter_id WHERE content LIKE '%$keyword%' OR topic LIKE '%$keyword%' OR user.nam LIKE '%$keyword%' ");
+        $response->execute();
+        while ($data = $response->fetch()) {
+            $result[] = $data;
+        }
+        return $result;
+    }

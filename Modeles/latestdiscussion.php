@@ -1,4 +1,4 @@
-<?php
+    <?php
     function connectDb()
     {
         $db = mysqli_connect("localhost","root", "", "forum");
@@ -23,3 +23,5 @@
         }
         else header("Location: /../Vues/home.php?ErrorGetDscussionr");
     }
+
+    

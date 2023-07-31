@@ -1,9 +1,10 @@
 <?php
+    
     session_start();
     if(isset($_POST['topic']) and isset($_POST['content']) and isset($_POST['user_id']))
         {
             $topic=$_POST['topic'];
-            $content=$_POST['content'];
+            $content=addslashes($_POST['content']);
             $user_id=$_POST['user_id'];
             include(dirname(__FILE__).'/../Modeles/createAdiscussion.php');
             $db=connectDb();

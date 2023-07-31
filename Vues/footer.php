@@ -31,10 +31,9 @@
             <div class="col-lg-4 col-md-12 col-12  text-center">
                 <h4>Search</h4>
                 <form class="d-flex" method="post" action="../Vues/searchResult.php">
-                            <select class="form-control me-2" name="categorie" id="categorie">
+                            <select class="form-control me-2" name="categories" id="categorie">
                                 <option value="group">group</option>
                                 <option value="discussion">discussion</option>
-                                <option value="reply">reply</option>
                             </select>
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="keyword">
                             <input class="btn btn-outline-primary" type="submit" value="Search">

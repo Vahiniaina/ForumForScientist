@@ -3,7 +3,7 @@
     if(isset($_POST['group_name']) and isset($_POST['topic']) )
         {
             $group_name=$_POST['group_name'];
-            $topic=$_POST['topic'];
+            $topicaddslashes(=$_POST['topic']);
             $user_id=$_POST['user_id'];
 
             if(isset($_POST['description']))$description=$_POST['description'];

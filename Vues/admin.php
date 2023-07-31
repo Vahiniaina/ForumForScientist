@@ -13,8 +13,9 @@
     <link href="../assets/css/navbar-top-fixed.css" rel="stylesheet">
     <script src="../bootstrap/js/jquery-3.5.1.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
-<body>
+<body style="padding-top: 0 !important;">
     <!--Header-->
     <?php include(dirname(__FILE__) . '/header.php'); ?>
     <!-- Content -->
