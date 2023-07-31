@@ -14,6 +14,7 @@ session_start();
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <link href="../assets/css/navbar-top-fixed.css" rel="stylesheet">
     <script src="../bootstrap/js/jquery-3.5.1.min.js"></script>
+    <link rel="SHORTCUT ICON" href="../assets/images//Forum_Picture.ico" />
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>

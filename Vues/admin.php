@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Group Administration</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="SHORTCUT ICON" href="../assets/images//Forum_Picture.ico" />
     <link rel="stylesheet" href="../fontawesome/css/all.css">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <link href="../assets/css/navbar-top-fixed.css" rel="stylesheet">
