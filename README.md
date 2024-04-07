@@ -1,5 +1,5 @@
 
-## ** Discussion Forum for Mathematicians and Scientists**
+## Discussion Forum for Mathematicians and Scientists
 
 **Description:**
 
